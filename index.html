@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Digi World Universe — Digital Marketing & AI Growth Agency</title>
+<meta name="description" content="Scale your brand with Digi World Universe, a premier digital marketing and AI automation agency in Mira Road, Mumbai, specializing in local SEO and high-ROI growth.">
+<meta name="keywords" content="Digital Marketing Agency Mira Road, Local SEO Mumbai, AI Automation, Web Development, Google Ads, Lead Generation, Digi World Universe">
+<meta property="og:title" content="Digi World Universe | Scale Beyond Limits">
+<meta property="og:description" content="Dominate your market with next-gen digital marketing and automated growth pipelines.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:        #07090f;
+    --panel:     #0d111a;
+    --line:      #1a2333;
+    --ink:       #f0f4f8;
+    --ink-dim:   #94a3b8;
+    --cyan:      #00f2fe;
+  }
+
+  *{ box-sizing:border-box; margin:0; padding:0; }
+  html{ scroll-behavior:smooth; }
+
+  body{
+    background:var(--bg);
+    color:var(--ink);
+    font-family:'Inter', sans-serif;
+    overflow-x:hidden;
+    -webkit-font-smoothing:antialiased;
+    perspective: 1200px;
+  }
+
+  ::selection{ background:var(--cyan); color:#07090f; }
+  a{ color:inherit; text-decoration:none; }
+
+  .mono{
+    font-family:'IBM Plex Mono', monospace;
+    letter-spacing:0.06em;
+  }
+
+  .display{
+    font-family:'Fraunces', serif;
+    font-weight:500;
+  }
+
+  :focus-visible{
+    outline:2px solid var(--cyan);
+    outline-offset:4px;
+  }
+
+  header{
+    position:fixed;
+    top:0; left:0; right:0;
+    z-index:100;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:1.2rem 2.5rem;
+    background:rgba(7,9,15,0.8);
+    backdrop-filter:blur(16px);
+    border-bottom:1px solid var(--line);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  }
+  header .mark{ display:flex; align-items:center; transition: transform 0.3s ease; }
+  header .mark:hover{ transform: scale(1.02); }
+  
+  header nav{ display:flex; gap:2rem; font-size:0.78rem; }
+  header nav a{ opacity:0.75; transition:opacity .3s, color .3s; }
+  header nav a:hover{ opacity:1; color:var(--cyan); }
+  @media (max-width:640px){ header nav{ display:none; } }
+
+  .hero{
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    padding:0 2.5rem;
+    position:relative;
+    overflow:hidden;
+    transform-style: preserve-3d;
+  }
+  .video-bg-container {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background: radial-gradient(circle at center, #111a2e 0%, #07090f 100%);
+  }
+  .video-bg-container video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: saturate(1.2) brightness(0.5);
+  }
+  .video-overlay {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at center, rgba(7, 9, 15, 0.2) 0%, rgba(7, 9, 15, 0.9) 100%);
+    z-index: 2;
+  }
+  .hero-content {
+    position: relative;
+    z-index: 3;
+    transform: translateZ(40px);
+  }
+
+  .hero .slate{
+    font-size:0.78rem;
+    color:var(--ink-dim);
+    margin-bottom:1.6rem;
+    display:flex;
+    gap:0.9rem;
+    align-items:center;
+  }
+  .hero .slate .dot{
+    width:6px; height:6px; border-radius:50%;
+    background:var(--cyan);
+    box-shadow:0 0 12px var(--cyan);
+    animation:pulse 1.6s ease-in-out infinite;
+  }
+  @keyframes pulse{ 0%,100%{opacity:1;} 50%{opacity:.25;} }
+
+  .hero h1{
+    font-size:clamp(2.6rem, 8.4vw, 7.4rem);
+    line-height:0.98;
+    letter-spacing:-0.02em;
+    max-width:20ch;
+  }
+  .hero h1 .line span{
+    display:inline-block;
+    color:var(--ink);
+  }
+  .hero h1 .line:nth-child(2) span{
+    color:var(--cyan);
+    font-style:italic;
+    font-weight:500;
+    text-shadow:0 0 25px rgba(0,242,254,0.3);
+  }
+
+  .hero p{
+    margin-top:1.8rem;
+    max-width:40ch;
+    color:var(--ink-dim);
+    font-size:1.02rem;
+    line-height:1.6;
+  }
+
+  .hero .scrollcue{
+    position:absolute;
+    bottom:6vh;
+    left:2.5rem;
+    display:flex;
+    align-items:center;
+    gap:0.7rem;
+    font-size:0.72rem;
+    color:var(--ink-dim);
+    z-index: 3;
+  }
+  .scrollcue .bar{
+    width:1px; height:34px;
+    background:linear-gradient(var(--cyan), transparent);
+    animation:scrolldown 1.8s ease-in-out infinite;
+  }
+  @keyframes scrolldown{ 0%{transform:scaleY(0); transform-origin:top;} 50%{transform:scaleY(1); transform-origin:top;} 50.01%{transform-origin:bottom;} 100%{transform:scaleY(0); transform-origin:bottom;} }
+
+  .ticker{
+    border-top:1px solid var(--line);
+    border-bottom:1px solid var(--line);
+    padding:1.1rem 0;
+    overflow:hidden;
+    white-space:nowrap;
+    background:rgba(13,17,26,0.6);
+  }
+  .ticker .track{
+    display:inline-flex;
+    animation:scroll 32s linear infinite;
+  }
+  .ticker span{
+    font-size:0.95rem;
+    padding:0 2.2rem;
+    color:var(--ink-dim);
+  }
+  .ticker span em{ color:var(--cyan); font-style:normal; margin-right:0.6rem; text-shadow:0 0 10px rgba(0,242,254,0.5); }
+  @keyframes scroll{ from{ transform:translateX(0); } to{ transform:translateX(-50%); } }
+
+  section{ padding:9rem 2.5rem; max-width:1240px; margin:0 auto; }
+  
+  section.cinematic-bg {
+    max-width: 100%;
+    position: relative;
+    overflow: hidden;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+  }
+  section.cinematic-bg > .content-wrapper {
+    position: relative;
+    z-index: 3;
+    max-width: 1240px;
+    margin: 0 auto;
+  }
+
+  .eyebrow{
+    font-size:0.75rem;
+    color:var(--cyan);
+    display:flex;
+    align-items:center;
+    gap:0.7rem;
+    margin-bottom:1.3rem;
+    text-shadow:0 0 10px rgba(0,242,254,0.3);
+  }
+  .eyebrow::before{
+    content:"";
+    width:22px; height:1px;
+    background:var(--cyan);
+    box-shadow:0 0 8px var(--cyan);
+  }
+  h2{
+    font-size:clamp(1.9rem, 4vw, 3.2rem);
+    font-weight:500;
+    letter-spacing:-0.01em;
+    max-width:16ch;
+  }
+
+  .work-head{ display:flex; justify-content:space-between; align-items:flex-end; gap:2rem; flex-wrap:wrap; }
+  .work-count{ font-size:0.78rem; color:var(--ink-dim); }
+
+  .grid{
+    margin-top:4rem;
+    display:grid;
+    grid-template-columns:repeat(2, 1fr);
+    gap:1.5rem;
+  }
+  @media (max-width:760px){ .grid{ grid-template-columns:1fr; } }
+
+  .card{
+    background:rgba(13,17,26,0.85);
+    backdrop-filter: blur(8px);
+    padding:2.6rem;
+    position:relative;
+    overflow:hidden;
+    min-height:340px;
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-end;
+    border:1px solid var(--line);
+    border-radius:12px;
+    transition: transform 0.2s ease-out, border-color 0.4s ease, box-shadow 0.4s ease;
+    transform-style: preserve-3d;
+    will-change: transform;
+  }
+  .card:hover{
+    border-color: rgba(0,242,254,0.4);
+    box-shadow: 0 20px 40px rgba(0,242,254,0.15), 0 0 20px rgba(0,242,254,0.08);
+  }
+  .card .frame{
+    position:absolute;
+    inset:0;
+    background:
+      radial-gradient(120% 90% at 20% 15%, rgba(0,242,254,0.15), transparent 60%),
+      radial-gradient(120% 90% at 85% 90%, rgba(79,172,254,0.25), transparent 60%);
+    transform:scale(1.15);
+    transition:transform 1s cubic-bezier(.16,1,.3,1), filter .8s ease;
+    filter:saturate(0.75);
+    z-index: 0;
+  }
+  .card:hover .frame{ transform:scale(1); filter:saturate(1.25); }
+
+  .card > * {
+    position: relative;
+    z-index: 2;
+    transform: translateZ(30px);
+  }
+
+  .card-img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    border: 1px solid rgba(0, 242, 254, 0.2);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.6);
+  }
+
+  .card .tc{
+    font-size:0.72rem;
+    color:var(--ink-dim);
+    margin-bottom:0.9rem;
+  }
+  .card .tc em{ color:var(--cyan); font-style:normal; }
+  .card h3{
+    font-size:1.7rem;
+    font-weight:500;
+    margin-bottom:0.5rem;
+  }
+  .card p{
+    color:var(--ink-dim);
+    font-size:0.92rem;
+    max-width:32ch;
+  }
+  .card .tag{
+    margin-top:1.4rem;
+    font-size:0.72rem;
+    color:var(--cyan);
+    display:flex;
+    align-items:center;
+    gap:0.5rem;
+  }
+  .card .tag::after{
+    content:"↗";
+    transition:transform .35s ease;
+  }
+  .card:hover .tag::after{ transform:translate(3px,-3px); }
+
+  .cta-row{
+    margin-top:3rem;
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    flex-wrap:wrap;
+    gap:4rem; 
+  }
+  
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    width: 100%;
+    max-width: 500px;
+    background: rgba(13,17,26,0.6);
+    padding: 2rem;
+    border-radius: 12px;
+    border: 1px solid var(--line);
+    backdrop-filter: blur(10px);
+  }
+  .contact-form input, .contact-form textarea {
+    padding: 1.2rem;
+    background: rgba(7, 9, 15, 0.8);
+    border: 1px solid var(--line);
+    color: var(--ink);
+    border-radius: 8px;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95rem;
+    transition: border-color 0.3s, box-shadow 0.3s;
+  }
+  .contact-form textarea {
+    resize: vertical;
+    min-height: 120px;
+  }
+  .contact-form input:focus, .contact-form textarea:focus {
+    outline: none;
+    border-color: var(--cyan);
+    box-shadow: 0 0 15px rgba(0, 242, 254, 0.15);
+  }
+  
+  .iris-btn{
+    position:relative;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:0.8rem;
+    padding:1.1rem 2rem;
+    border:1px solid var(--cyan);
+    background:transparent;
+    border-radius:999px;
+    font-size:0.95rem;
+    cursor:pointer;
+    overflow:hidden;
+    isolation:isolate;
+    box-shadow:0 0 25px rgba(0,242,254,0.2);
+  }
+  .iris-btn span{ position:relative; z-index:2; transition:color .5s ease .05s; color:var(--cyan); }
+  .iris-btn::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:var(--cyan);
+    border-radius:50%;
+    transform:scale(0);
+    transition:transform .55s cubic-bezier(.65,0,.15,1);
+    z-index:1;
+  }
+  .iris-btn:hover::before{ transform:scale(2.4); }
+  .iris-btn:hover span{ color:#07090f; text-shadow:none; }
+
+  .contact-links{ display:flex; flex-direction:column; gap:0.8rem; font-size:0.95rem; color:var(--ink-dim); background: rgba(13,17,26,0.6); padding: 2rem; border-radius: 12px; border: 1px solid var(--line); backdrop-filter: blur(10px); }
+  .contact-links a:hover{ color:var(--cyan); }
+
+  .whatsapp-float {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    background-color: #25d366;
+    color: #fff;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+    z-index: 999;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .whatsapp-float:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 25px rgba(37, 211, 102, 0.6);
+  }
+
+  footer{
+    padding:2.5rem;
+    display:flex;
+    justify-content:space-between;
+    font-size:0.72rem;
+    color:var(--ink-dim);
+    flex-wrap:wrap;
+    gap:1rem;
+    background:#04060a;
+  }
+</style>
+</head>
+<body>
+
+  <header>
+    <a href="#" class="mark">
+      <picture>
+        <img src="DiGi%20Logo%20(1).jpg" alt="Digi World Universe Logo" loading="lazy" style="height: 45px; width: auto; border-radius: 4px;">
+      </picture>
+    </a>
+    <nav class="mono">
+      <a href="#work">PACKAGES</a>
+      <a href="#templates">TEMPLATES</a>
+      <a href="#about">ABOUT</a>
+      <a href="#contact">CONTACT</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="video-bg-container">
+        <video autoplay loop muted playsinline preload="auto">
+          <source src="digi-world-promo.mp4.mp4" type="video/mp4">
+        </video>
+        <div class="video-overlay"></div>
+      </div>
+
+      <div class="hero-content">
+        <div class="slate mono"><span class="dot"></span> AI AUTOMATION & DIGITAL GROWTH AGENCY</div>
+        <h1 class="display">
+          <span class="line"><span>We scale brands</span></span>
+          <span class="line"><span>beyond limits</span></span>
+          <span class="line"><span>with precision.</span></span>
+        </h1>
+        <p>Digi World Universe is a next-gen digital marketing and AI automation powerhouse built for high-growth businesses ready to dominate online markets.</p>
+      </div>
+
+      <div class="scrollcue"><div class="bar"></div> SCROLL TO EXPLORE</div>
+    </section>
+
+    <div class="ticker">
+      <div class="track mono">
+        <span><em>—</em>LOCAL SEO</span>
+        <span><em>—</em>AI AUTOMATION</span>
+        <span><em>—</em>GOOGLE & META ADS</span>
+        <span><em>—</em>CUSTOM WEB DEVELOPMENT</span>
+        <span><em>—</em>LEAD GENERATION</span>
+        <span><em>—</em>GROWTH STRATEGY</span>
+        <span><em>—</em>LOCAL SEO</span>
+        <span><em>—</em>AI AUTOMATION</span>
+        <span><em>—</em>GOOGLE & META ADS</span>
+        <span><em>—</em>CUSTOM WEB DEVELOPMENT</span>
+        <span><em>—</em>LEAD GENERATION</span>
+        <span><em>—</em>GROWTH STRATEGY</span>
+      </div>
+    </div>
+
+    <section id="work" class="cinematic-bg">
+      <div class="video-bg-container" style="position: absolute; inset: 0; z-index: 1;">
+        <video autoplay loop muted playsinline style="width: 100%; height: 100%; object-fit: cover; opacity: 0.25;">
+          <source src="Boss%20IO.mp4" type="video/mp4">
+        </video>
+        <div style="position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(7,9,15,1) 0%, rgba(7,9,15,0.7) 50%, rgba(7,9,15,1) 100%); z-index: 2;"></div>
+      </div>
+
+      <div class="content-wrapper">
+        <div class="work-head">
+          <div>
+            <div class="eyebrow mono">GROWTH PACKAGES</div>
+            <h2 class="display">Engineered for digital dominance.</h2>
+          </div>
+          <div class="work-count mono">CHOOSE YOUR SCALE</div>
+        </div>
+
+        <div class="grid">
+          <article class="card tilt-card">
+            <div class="frame"></div>
+            <picture>
+              <img src="Package%201.png" alt="Google Ranking Package" class="card-img" loading="lazy">
+            </picture>
+            <div class="tc mono">PACKAGE 01 <em>· ₹6,000 / WEEK</em></div>
+            <h3 class="display">Rank Higher on Google</h3>
+            <p>More visibility, traffic, and leads with our proven SEO research and optimization process.</p>
+            <a href="#contact" class="tag mono">SUBSCRIBE NOW</a>
+          </article>
+
+          <article class="card tilt-card">
+            <div class="frame"></div>
+            <picture>
+              <img src="Package%202.png" alt="Branding Package" class="card-img" loading="lazy">
+            </picture>
+            <div class="tc mono">PACKAGE 02 <em>· ₹6,000 / WEEK</em></div>
+            <h3 class="display">Powerful Branding</h3>
+            <p>Stunning designs, unlimited social media posts, videos, templates, and creative assets.</p>
+            <a href="#contact" class="tag mono">SUBSCRIBE NOW</a>
+          </article>
+
+          <article class="card tilt-card">
+            <div class="frame"></div>
+            <picture>
+              <img src="package%203.png" alt="All In One Package" class="card-img" loading="lazy">
+            </picture>
+            <div class="tc mono">PACKAGE 03 <em>· ₹8,999 / WEEK</em></div>
+            <h3 class="display">Complete Digital Growth</h3>
+            <p>Everything in one pack: SEO, Google Ads, Web Development, Lead Gen, and Social Media.</p>
+            <a href="#contact" class="tag mono">SUBSCRIBE NOW</a>
+          </article>
+
+          <article class="card tilt-card">
+            <div class="frame"></div>
+            <picture>
+              <img src="package%204.png" alt="Google Ads & Ranking Package" class="card-img" loading="lazy">
+            </picture>
+            <div class="tc mono">PACKAGE 04 <em>· ₹25K ONWARDS</em></div>
+            <h3 class="display">Google Ads & Ranking</h3>
+            <p>Complete services including campaign setup, keyword research, ad copy creation, and landing page optimization.</p>
+            <a href="#contact" class="tag mono">SUBSCRIBE NOW</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="templates" class="cinematic-bg">
+      <div class="video-bg-container" style="position: absolute; inset: 0; z-index: 1;">
+        <video autoplay loop muted playsinline style="width: 100%; height: 100%; object-fit: cover; opacity: 0.25;">
+          <source src="Boss%20IO.mp4" type="video/mp4">
+        </video>
+        <div style="position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(7,9,15,1) 0%, rgba(7,9,15,0.7) 50%, rgba(7,9,15,1) 100%); z-index: 2;"></div>
+      </div>
+
+      <div class="content-wrapper">
+        <div class="work-head">
+          <div>
+            <div class="eyebrow mono">FREE RESOURCES & FRAMEWORKS</div>
+            <h2 class="display">Ready-to-deploy agency templates.</h2>
+          </div>
+          <div class="work-count mono">04 BUNDLES / PLUG & PLAY</div>
+        </div>
+
+        <div class="grid">
+          <article class="card tilt-card">
+            <div class="frame"></div>
+            <div class="tc mono">TEMPLATE 01 <em>· COLD_OUTREACH</em></div>
+            <h3 class="display">US Contractor Cold Scripts</h3>
+            <p>High-converting email and cold calling templates designed specifically for home service and HVAC contractors.</p>
+            <a href="#contact" class="tag mono">ACCESS TEMPLATE</a>
+          </article>
+
+          <article class="card tilt-card">
+            <div class="frame"></div>
+            <div class="tc mono">TEMPLATE 02 <em>· AD_SCRIPTS</em></div>
+            <h3 class="display">AI Ad Creative Frameworks</h3>
+            <p>Structured video script outlines and visual prompts optimized for high-engagement Meta and Google ad formats.</p>
+            <a href="#contact" class="tag mono">ACCESS TEMPLATE</a>
+          </article>
+
+          <article class="card tilt-card">
+            <div class="frame"></div>
+            <div class="tc mono">TEMPLATE 03 <em>· SEO_AUDIT</em></div>
+            <h3 class="display">Local SEO Checklist</h3>
+            <p>A complete technical blueprint covering Google Business Profile optimization, keywords, and canonical tags.</p>
+            <a href="#contact" class="tag mono">ACCESS TEMPLATE</a>
+          </article>
+
+          <article class="card tilt-card">
+            <div class="frame"></div>
+            <div class="tc mono">TEMPLATE 04 <em>· CRM_WORKFLOW</em></div>
+            <h3 class="display">Zoho & WhatsApp Pipeline</h3>
+            <p>Automated lead mapping frameworks and webhook triggers to sync inquiries instantly into sales funnels.</p>
+            <a href="#contact" class="tag mono">ACCESS TEMPLATE</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="cinematic-bg" style="padding: 10rem 2.5rem;">
+      <div class="video-bg-container" style="position: absolute; inset: 0; z-index: 1;">
+        <video autoplay loop muted playsinline style="width: 100%; height: 100%; object-fit: cover; opacity: 0.65;">
+          <source src="Boss.mp4" type="video/mp4">
+        </video>
+        <div style="position: absolute; inset: 0; background: linear-gradient(to right, rgba(7,9,15,0.98) 0%, rgba(7,9,15,0.7) 100%); z-index: 2;"></div>
+      </div>
+
+      <div class="content-wrapper" style="display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 5rem; align-items: center;">
+        <div>
+          <div class="eyebrow mono" style="text-shadow: 0 0 10px rgba(0,242,254,0.5);">MEET THE BOSS</div>
+          <h2 class="display" style="text-shadow: 0 4px 20px rgba(0,0,0,0.9); margin-bottom: 1.5rem;">Simple. Don't work hard... Work with flow.</h2>
+          <p class="lede" style="color: #e2e8f0; text-shadow: 0 2px 10px rgba(0,0,0,0.9); font-size: 1.15rem; line-height: 1.7;">
+            Digi World Universe bridges the gap between technical web engineering and aggressive market growth. <strong>We treat every campaign like a blueprint for scale</strong> — optimized, tracked, and tailored for maximum ROI.
+          </p>
+        </div>
+        
+        <div style="background: rgba(13,17,26,0.6); padding: 3rem; border-radius: 16px; border: 1px solid rgba(0,242,254,0.3); backdrop-filter: blur(12px); box-shadow: 0 20px 40px rgba(0,0,0,0.5);">
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2.6rem 2rem;">
+            <div class="stat">
+              <div class="num mono" style="font-size: 2.5rem; color:var(--cyan); text-shadow:0 0 15px rgba(0,242,254,0.3);">100+</div>
+              <div class="lbl mono" style="font-size:0.78rem; color:var(--ink-dim); margin-top:0.4rem;">CLIENTS SCALED</div>
+            </div>
+            <div class="stat">
+              <div class="num mono" style="font-size: 2.5rem; color:var(--cyan); text-shadow:0 0 15px rgba(0,242,254,0.3);">3X+</div>
+              <div class="lbl mono" style="font-size:0.78rem; color:var(--ink-dim); margin-top:0.4rem;">AVERAGE ROI</div>
+            </div>
+            <div class="stat">
+              <div class="num mono" style="font-size: 2.5rem; color:var(--cyan); text-shadow:0 0 15px rgba(0,242,254,0.3);">24/7</div>
+              <div class="lbl mono" style="font-size:0.78rem; color:var(--ink-dim); margin-top:0.4rem;">AUTOMATED</div>
+            </div>
+            <div class="stat">
+              <div class="num mono" style="font-size: 2.5rem; color:var(--cyan); text-shadow:0 0 15px rgba(0,242,254,0.3);">100%</div>
+              <div class="lbl mono" style="font-size:0.78rem; color:var(--ink-dim); margin-top:0.4rem;">CUSTOM</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="cinematic-bg">
+      <div class="video-bg-container" style="position: absolute; inset: 0; z-index: 1;">
+        <video autoplay loop muted playsinline style="width: 100%; height: 100%; object-fit: cover; opacity: 0.25;">
+          <source src="Boss%20IO.mp4" type="video/mp4">
+        </video>
+        <div style="position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(7,9,15,1) 0%, rgba(7,9,15,0.7) 50%, rgba(7,9,15,1) 100%); z-index: 2;"></div>
+      </div>
+
+      <div class="content-wrapper">
+        <div class="eyebrow mono">START A PROJECT</div>
+        <h2 class="display">Ready to accelerate your business growth?</h2>
+        
+        <div class="cta-row">
+          <form class="contact-form" name="Agency Leads" method="POST" data-netlify="true">
+            <input type="text" name="Name" placeholder="Your Name" required>
+            <input type="email" name="Email" placeholder="Your Email Address" required>
+            <textarea name="Message" placeholder="Tell us about your project or growth goals..." required></textarea>
+            <button type="submit" class="iris-btn mono"><span>SEND MESSAGE ↗</span></button>
+          </form>
+
+          <div class="contact-links mono">
+            <p style="color: var(--cyan); margin-bottom: 0.5rem;">DIRECT OUTREACH</p>
+            <a href="mailto:contact@digiworlduniverse.com">contact@digiworlduniverse.com</a>
+            <a href="tel:+917304784432">+91 73047 84432 (India)</a>
+            <a href="#">Mira Road, Mumbai HQ</a>
+            <a href="#" style="margin-top: 1rem;">Instagram ↗</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="mono">
+    <span>© 2026 DIGI WORLD UNIVERSE. ALL RIGHTS RESERVED.</span>
+    <span>MIRA ROAD, MUMBAI — GLOBAL DIGITAL SERVICES</span>
+  </footer>
+
+  <a href="https://wa.me/917304784432?text=Hi%2C%20I%20want%20to%20know%20more%20about%20Digi%20World%20Universe's%20digital%20marketing%20packages." 
+     class="whatsapp-float" 
+     target="_blank" 
+     rel="noopener noreferrer" 
+     aria-label="Chat on WhatsApp">
+     <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" viewBox="0 0 16 16">
+       <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c-.003 1.396.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"/>
+     </svg>
+  </a>
+
+  <script>
+    const cards = document.querySelectorAll('.tilt-card');
+    cards.forEach(card => {
+      card.addEventListener('mousemove', e => {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        const centerX = rect.width / 2;
+        const centerY = rect.height / 2;
+        const rotateX = ((y - centerY) / centerY) * -12;
+        const rotateY = ((x - centerX) / centerX) * 12;
+
+        card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-6px)`;
+      });
+
+      card.addEventListener('mouseleave', () => {
+        card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) translateY(0px)';
+      });
+    });
+
+    window.addEventListener('load', () => {
+      const vids = document.querySelectorAll('video');
+      vids.forEach(vid => {
+        if (vid) {
+          vid.play().catch(err => {
+            document.body.addEventListener('click', () => {
+              vid.play();
+            }, { once: true });
+          });
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
