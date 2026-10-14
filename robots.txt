@@ -1,4 +1,6 @@
 User-agent: *
 Allow: /
 
+Disallow: /cgi-bin/
+
 Sitemap: https://digiuniverse.world/sitemap.xml
