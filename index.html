@@ -80,7 +80,7 @@
   header nav a:hover{ opacity:1; color:var(--cyan); }
   @media (max-width:640px){ header nav{ display:none; } }
 
-  /* ---------- hero with direct video background ---------- */
+  /* ---------- hero with background ---------- */
   .hero{
     min-height:100vh;
     display:flex;
@@ -97,18 +97,18 @@
     width: 100%;
     height: 100%;
     z-index: 1;
-    background: radial-gradient(circle at center, #111a2e 0%, #07090f 100%);
+    background: radial-gradient(circle at 50% 50%, #0d1b32 0%, #07090f 70%);
   }
   .video-bg-container video {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    filter: saturate(1.2) brightness(0.5);
+    filter: saturate(1.2) brightness(0.55);
   }
   .video-overlay {
     position: absolute;
     inset: 0;
-    background: radial-gradient(circle at center, rgba(7, 9, 15, 0.2) 0%, rgba(7, 9, 15, 0.9) 100%);
+    background: radial-gradient(circle at center, rgba(7, 9, 15, 0.15) 0%, rgba(7, 9, 15, 0.88) 100%);
     z-index: 2;
   }
   .hero-content {
@@ -221,7 +221,7 @@
     max-width:16ch;
   }
 
-  /* ---------- 3D interactive tilt cards grid ---------- */
+  /* ---------- cards grid ---------- */
   .work-head{ display:flex; justify-content:space-between; align-items:flex-end; gap:2rem; flex-wrap:wrap; }
   .work-count{ font-size:0.78rem; color:var(--ink-dim); }
 
@@ -345,12 +345,11 @@
     margin-top:3rem;
     display:flex;
     justify-content:space-between;
-    align-items:flex-start; /* Changed for form alignment */
+    align-items:flex-start;
     flex-wrap:wrap;
-    gap:4rem; /* Increased gap for form breathing room */
+    gap:4rem;
   }
   
-  /* Form Styling */
   .contact-form {
     display: flex;
     flex-direction: column;
@@ -411,6 +410,30 @@
   .contact-links{ display:flex; flex-direction:column; gap:0.8rem; font-size:0.95rem; color:var(--ink-dim); }
   .contact-links a:hover{ color:var(--cyan); }
 
+  /* ---------- floating whatsapp widget ---------- */
+  .whatsapp-float {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: #25d366;
+    color: #fff;
+    width: 60px;
+    height: 60px;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .whatsapp-float:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 25px rgba(37, 211, 102, 0.6);
+  }
+
   footer{
     padding:2.5rem;
     display:flex;
@@ -426,8 +449,12 @@
 </head>
 <body>
 
+  <!-- Floating WhatsApp Widget -->
+  <a href="https://wa.me/917304784432?text=Hi%20Digi%20World%20Universe,%20I'm%20interested%20in%20your%20digital%20growth%20packages!" class="whatsapp-float" target="_blank" title="Chat with us on WhatsApp">
+    <svg width="34" height="34" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+  </a>
+
   <header>
-    <!-- LOGO IMAGE -->
     <a href="#" class="mark">
       <img src="DiGi Logo (1).jpg" alt="Digi World Universe Logo">
     </a>
@@ -442,9 +469,8 @@
   <main>
     <section class="hero">
       <div class="video-bg-container">
-        <!-- Main Promo Video -->
         <video id="heroVideo" autoplay loop muted playsinline preload="auto">
-          <source src="file:///C:/Users/Aarshu/Downloads/digi-world-promo.mp4.mp4" type="video/mp4">
+          <source src="digi-world-promo.mp4" type="video/mp4">
         </video>
         <div class="video-overlay"></div>
       </div>
@@ -464,12 +490,6 @@
 
     <div class="ticker">
       <div class="track mono">
-        <span><em>—</em>LOCAL SEO</span>
-        <span><em>—</em>AI AUTOMATION</span>
-        <span><em>—</em>GOOGLE & META ADS</span>
-        <span><em>—</em>CUSTOM WEB DEVELOPMENT</span>
-        <span><em>—</em>LEAD GENERATION</span>
-        <span><em>—</em>GROWTH STRATEGY</span>
         <span><em>—</em>LOCAL SEO</span>
         <span><em>—</em>AI AUTOMATION</span>
         <span><em>—</em>GOOGLE & META ADS</span>
@@ -577,12 +597,9 @@
         <h2 class="display">Data-driven strategy meets creative execution.</h2>
         <p class="lede">Digi World Universe bridges the gap between technical web engineering and aggressive market growth. <strong>We treat every campaign like a blueprint for scale</strong> — optimized, tracked, and tailored for maximum ROI.</p>
         
-        <!-- INLINE VIDEO PLAYER: BOSS IO -->
         <div style="margin-top: 2.5rem; border-radius: 12px; overflow: hidden; border: 1px solid rgba(0, 242, 254, 0.3); box-shadow: 0 15px 35px rgba(0, 242, 254, 0.15);">
           <video autoplay loop muted playsinline style="width: 100%; display: block; filter: brightness(0.85);">
-            <source src="file:///C:/Users/Aarshu/Downloads/Boss%20IO.mp4" type="video/mp4">
             <source src="Boss IO.mp4" type="video/mp4">
-            <source src="Boss IO.mp4.mp4" type="video/mp4">
           </video>
         </div>
 
@@ -611,17 +628,14 @@
       <div class="eyebrow mono">START A PROJECT</div>
       <h2 class="display">Ready to accelerate your business growth?</h2>
       
-      <!-- NEW CONTACT FORM AND DETAILS -->
       <div class="cta-row">
-        <!-- Interactive Form -->
-        <form class="contact-form" action="mailto:contact@digiworlduniverse.com" method="post" enctype="text/plain">
+        <form class="contact-form" action="url?id=5" method="post" enctype="text/plain">
           <input type="text" name="Name" placeholder="Your Name" required>
           <input type="email" name="Email" placeholder="Your Email Address" required>
           <textarea name="Message" placeholder="Tell us about your project or growth goals..." required></textarea>
           <button type="submit" class="iris-btn mono"><span>SEND MESSAGE ↗</span></button>
         </form>
 
-        <!-- Direct Contact Info -->
         <div class="contact-links mono">
           <p style="color: var(--cyan); margin-bottom: 0.5rem;">DIRECT OUTREACH</p>
           <a href="mailto:contact@digiworlduniverse.com">contact@digiworlduniverse.com</a>
@@ -639,7 +653,6 @@
   </footer>
 
   <script>
-    // 3D Tilt Effect on Cards
     const cards = document.querySelectorAll('.tilt-card');
     cards.forEach(card => {
       card.addEventListener('mousemove', e => {
@@ -659,7 +672,6 @@
       });
     });
 
-    // Video Safely Play Trigger
     window.addEventListener('load', () => {
       const vids = document.querySelectorAll('video');
       vids.forEach(vid => {
